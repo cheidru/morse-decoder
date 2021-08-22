@@ -37,10 +37,11 @@ const MORSE_TABLE = {
     '-----':  '0',
 };
 
+let result = "";
+
 function decode(expr) {
     // write your solution here
     let exprString = String(expr);
-    let result = "";
     let morseSubstr = "";
     for (let i = 0; i < exprString.length; i += 10) {
         // result = result + MORSE_TABLE[expr.substr(i, i+10)];
