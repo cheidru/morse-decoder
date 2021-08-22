@@ -43,7 +43,7 @@ function decode(expr) {
     let exprString = String(expr);
     let result = "";
     let morseSubstr = "";
-    for (let i = 0; i < exprString.length; i += 10) {
+    for (let i = 0; i < exprString.length; i = i + 10) {
         // result = result + MORSE_TABLE[expr.substr(i, i+10)];
         // morseSubstr = exprString.substr(i, i+10);
         morseSubstr = '-.--';
