@@ -54,12 +54,12 @@ function decode(expr) {
 function turnToMorseCode(str) {
     let digs = str.split('');
     let i = 0;
-    let result = "";
+    let morse = "";
     while (digs[i] == 0) i++;
     for (; i < str.length; i += 2){
-        result = digs[i] + digs[i+1] == '10' ? result + '.' : result + '-';
+        morse = digs[i] + digs[i+1] == '10' ? morse + '.' : morse + '-';
     }
-    return result;
+    return morse;
 }
 
 module.exports = {
