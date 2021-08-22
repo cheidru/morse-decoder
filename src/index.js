@@ -47,7 +47,7 @@ function decode(expr) {
     for (let i = 0; i < exprString.length; i += 10) {
         // result = result + MORSE_TABLE[expr.substr(i, i+10)];
         morseSubstr = exprString.substr(i, i+10);
-        result = result + `$(morseSubstr == '**********' ? ' ' : MORSE_TABLE[turnToMorseCode(morseSubstr)])`;
+        result = result + `${morseSubstr == '**********' ? ' ' : MORSE_TABLE[turnToMorseCode(morseSubstr)]}`;
     }
 
     return result;
