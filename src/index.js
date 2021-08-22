@@ -40,10 +40,12 @@ const MORSE_TABLE = {
 function decode(expr) {
     // write your solution here
     MORSE_TABLE['**********'] = ' ';
-    let result = "test ";
-    for (i = 0; i < expr.length; i+=10) {
-        // result = result + MORSE_TABLE[expr.substr(i, i+10)];
-        result = result + MORSE_TABLE['-----'];
+    let result = "";
+    // let morseSubstr = "";
+    for (let i = 0; i < expr.length; i+=10) {
+        result = result + MORSE_TABLE[expr.substr(i, i+10)];
+        // morseSubstr = expr.substr(i, i+10);
+        // result = result + MORSE_TABLE['-----'];
     }
 
     return result;
