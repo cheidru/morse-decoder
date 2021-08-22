@@ -39,18 +39,26 @@ const MORSE_TABLE = {
 
 function decode(expr) {
     // write your solution here
-    MORSE_TABLE['**********'] = ' ';
     let exprString = String(expr);
     let result = "";
     let morseSubstr = "";
     for (let i = 0; i < exprString.length; i += 10) {
         // result = result + MORSE_TABLE[expr.substr(i, i+10)];
         morseSubstr = exprString.substr(i, i+10);
-        // morseSubstr = '-.--';
-        // result = result + MORSE_TABLE[morseSubstr];
-        result = result + morseSubstr;
+        result = result + morseSubstr == '**********' ? ' ' : MORSE_TABLE[turnToMorseCode(morseSubstr)];
     }
 
+    return result;
+}
+
+function turnToMorseCode(str) {
+    let digs = str.split('');
+    let i = 0;
+    let result = "";
+    while (digs[i] == 0) i++;
+    for (; i < str.length; i += 2){
+        result = digs[i] + digs[i+1] == '10' ? result + '.' : result + '-';
+    }
     return result;
 }
 
