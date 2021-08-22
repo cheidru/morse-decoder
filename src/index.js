@@ -53,7 +53,7 @@ function decode(expr) {
             let digs = morseSubstr.split('');
             let j = 0;
             let morse = "";
-            while (digs[j] == 0) i++;
+            while (digs[j] == 0) j++;
             for (; j < morseSubstr.length; j += 2){
                 morse = digs[j] + digs[j+1] == '10' ? morse + '.' : morse + '-';
             }
