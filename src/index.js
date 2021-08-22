@@ -42,7 +42,8 @@ function decode(expr) {
     MORSE_TABLE['**********'] = ' ';
     let result = "test ";
     for (i = 0; i < expr.length; i+=10) {
-        result = result + MORSE_TABLE[expr.substr(i, i+10)];
+        // result = result + MORSE_TABLE[expr.substr(i, i+10)];
+        result = result + MORSE_TABLE.['-----'];
     }
 
     return result;
